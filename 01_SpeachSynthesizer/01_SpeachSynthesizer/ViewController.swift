@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             
             utterance.voice = AVSpeechSynthesisVoice(language: "zh-cn")
             
-            utterance.rate = 0.4
+            utterance.rate = AVSpeechUtteranceMinimumSpeechRate
             
             utterance.pitchMultiplier = 0.8
             
