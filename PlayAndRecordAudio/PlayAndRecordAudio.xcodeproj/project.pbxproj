@@ -17,6 +17,7 @@
 		5C7233D9207B015800BDA508 /* drums.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5C7233D6207B015800BDA508 /* drums.caf */; };
 		5C7233DA207B015800BDA508 /* guitar.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5C7233D7207B015800BDA508 /* guitar.caf */; };
 		5C7233DB207B015800BDA508 /* bass.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5C7233D8207B015800BDA508 /* bass.caf */; };
+		5C7233DF207BA57700BDA508 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7233DE207BA57700BDA508 /* PlayerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		5C7233D6207B015800BDA508 /* drums.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drums.caf; sourceTree = "<group>"; };
 		5C7233D7207B015800BDA508 /* guitar.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitar.caf; sourceTree = "<group>"; };
 		5C7233D8207B015800BDA508 /* bass.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bass.caf; sourceTree = "<group>"; };
+		5C7233DE207BA57700BDA508 /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				5C7233AE207A585F00BDA508 /* Assets.xcassets */,
 				5C7233B0207A585F00BDA508 /* LaunchScreen.storyboard */,
 				5C7233B3207A585F00BDA508 /* Info.plist */,
+				5C7233DE207BA57700BDA508 /* PlayerController.swift */,
 			);
 			path = PlayAndRecordAudio;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			files = (
 				5C7233AA207A585D00BDA508 /* ViewController.swift in Sources */,
 				5C7233A8207A585D00BDA508 /* AppDelegate.swift in Sources */,
+				5C7233DF207BA57700BDA508 /* PlayerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

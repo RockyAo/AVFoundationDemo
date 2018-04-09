@@ -35,6 +35,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oUx-H6-3qe">
                                         <rect key="frame" x="47" y="50" width="320" height="31"/>
+                                        <connections>
+                                            <action selector="adjustPan:" destination="BYZ-38-t0r" eventType="valueChanged" id="2DC-lb-IbB"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzu-3c-giC">
                                         <rect key="frame" x="10" y="94.5" width="58" height="21"/>
@@ -44,6 +47,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pCK-u1-5zi">
                                         <rect key="frame" x="76" y="90" width="291" height="31"/>
+                                        <connections>
+                                            <action selector="adjustVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="1sX-lg-ns1"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.90707776738761003" blue="0.47559347360345983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -80,8 +86,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lCK-I7-U0p">
+                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lCK-I7-U0p">
                                         <rect key="frame" x="47" y="50" width="320" height="31"/>
+                                        <connections>
+                                            <action selector="adjustPan:" destination="BYZ-38-t0r" eventType="valueChanged" id="JdS-pt-IHb"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDg-kQ-elK">
                                         <rect key="frame" x="10" y="94.5" width="58" height="21"/>
@@ -89,8 +98,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="y1C-UR-vJs">
+                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="y1C-UR-vJs">
                                         <rect key="frame" x="76" y="90" width="291" height="31"/>
+                                        <connections>
+                                            <action selector="adjustVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="SyE-He-f7h"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.90707776740000001" blue="0.47559347359999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -127,8 +139,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="shw-y9-Cc9">
+                                    <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="shw-y9-Cc9">
                                         <rect key="frame" x="47" y="50" width="320" height="31"/>
+                                        <connections>
+                                            <action selector="adjustPan:" destination="BYZ-38-t0r" eventType="valueChanged" id="il0-9W-EzC"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e6-NR-HbD">
                                         <rect key="frame" x="10" y="94.5" width="58" height="21"/>
@@ -136,8 +151,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-DV-yg1">
+                                    <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-DV-yg1">
                                         <rect key="frame" x="76" y="90" width="291" height="31"/>
+                                        <connections>
+                                            <action selector="adjustVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="2EV-Q7-IqH"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.90707776740000001" blue="0.47559347359999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -165,8 +183,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="n1G-j2-les">
+                            <slider opaque="NO" tag="3000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="n1G-j2-les">
                                 <rect key="frame" x="53" y="435.5" width="314" height="31"/>
+                                <connections>
+                                    <action selector="adjustRate:" destination="BYZ-38-t0r" eventType="valueChanged" id="ilM-Kf-nCz"/>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xk5-9Z-8vS"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-8y-IBt">
                                 <rect key="frame" x="162.5" y="515.5" width="50" height="50"/>
@@ -175,6 +197,9 @@
                                     <constraint firstAttribute="width" constant="50" id="rOM-W3-7FC"/>
                                 </constraints>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playOrStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hu7-Ut-dzo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -198,6 +223,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="nxq-8y-IBt" id="PGD-nF-Eco"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
