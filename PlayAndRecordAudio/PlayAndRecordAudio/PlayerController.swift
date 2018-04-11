@@ -9,12 +9,26 @@
 import Foundation
 import AVFoundation
 
+protocol PlayerControlelrDelegate:class {
+    
+    func playbackStop()
+    func playbackBegan()
+}
+
 
 final class PlayerController {
     
     private var playStatus:Bool = false
     
     private var players:Array<AVAudioPlayer>!
+    
+    var isPlaying:Bool {
+        get{
+            return playStatus
+        }
+    }
+    
+    weak var delegate:PlayerControlelrDelegate?
     
     init() {
         
@@ -29,13 +43,21 @@ final class PlayerController {
         }else{
             fatalError("音频初始化失败")
         }
+        
+        let center = NotificationCenter.default
+        
+        center.addObserver(self,
+                           selector: #selector(handleInterruption(notification:)),
+                           name: Notification.Name.AVAudioSessionInterruption,
+                           object: AVAudioSession.sharedInstance())
+        
+        center.addObserver(self,
+                           selector: #selector(handleRouteChange(notification:)),
+                           name: Notification.Name.AVAudioSessionRouteChange,
+                           object: AVAudioSession.sharedInstance())
     }
     
-    var isPlaying:Bool {
-        get{
-            return playStatus
-        }
-    }
+    
     
     func play() {
         if !playStatus {
@@ -96,5 +118,53 @@ final class PlayerController {
         }
         
         return player
+    }
+    
+    ///处理中断通知
+    @objc private func handleInterruption(notification:Notification){
+        guard let info = notification.userInfo ,
+                let type = info[AVAudioSessionInterruptionTypeKey] as? AVAudioSessionInterruptionType else { return }
+        
+        if type == .began {
+            stop()
+            if let delegate = self.delegate {
+                delegate.playbackStop()
+            }
+        }else{
+            
+            guard let options = info[AVAudioSessionInterruptionOptionKey] as? AVAudioSessionInterruptionOptions else { return }
+            
+            if options == .shouldResume{
+                play()
+                
+                if let delegate = self.delegate {
+                    delegate.playbackBegan()
+                }
+            }
+        }
+    }
+    
+    ///处理线路改变
+    @objc private func handleRouteChange(notification:Notification){
+        guard let info = notification.userInfo ,
+                let reason = info[AVAudioSessionRouteChangeReasonKey] as? AVAudioSessionRouteChangeReason
+            else { return  }
+        
+        if reason == .oldDeviceUnavailable {
+            
+            guard let previesRoute = info[AVAudioSessionRouteChangePreviousRouteKey] as? AVAudioSessionRouteDescription,
+                    let previousOutput = previesRoute.outputs.first else { return }
+            
+            if previousOutput.portType == AVAudioSessionPortHeadphones {
+                stop()
+                if let delegate = self.delegate {
+                    delegate.playbackStop()
+                }
+            }
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
