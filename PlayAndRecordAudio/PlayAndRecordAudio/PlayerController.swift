@@ -58,15 +58,27 @@ final class PlayerController {
     }
     
     func adjustRate(_ rate:Float)  {
-        
+        players.forEach { (p) in
+            p.rate = rate
+        }
     }
     
     func adjustPan(_ pan:Float, forPlayerAtIndex index:Int)  {
-        
+        if isValidIndex(index) {
+            let p = players[index]
+            p.pan = pan
+        }
     }
     
-    func adjustVolume(_ pan:Float, forPlayerAtIndex index:Int)  {
-        
+    func adjustVolume(_ volume:Float, forPlayerAtIndex index:Int)  {
+        if isValidIndex(index) {
+            let p = players[index]
+            p.volume = volume
+        }
+    }
+    
+    private func isValidIndex(_ index:Int) -> Bool {
+        return index == 0 || index < self.players.count
     }
     
     private func playerForFile(_ fileName:String) -> AVAudioPlayer?{

@@ -187,7 +187,6 @@
                                 <rect key="frame" x="53" y="435.5" width="314" height="31"/>
                                 <connections>
                                     <action selector="adjustRate:" destination="BYZ-38-t0r" eventType="valueChanged" id="ilM-Kf-nCz"/>
-                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xk5-9Z-8vS"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-8y-IBt">
